@@ -14,24 +14,27 @@
     "imagem": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "titulo": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "subtitulo": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "data": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "localizacao": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

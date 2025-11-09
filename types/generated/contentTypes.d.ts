@@ -481,18 +481,19 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    data: Schema.Attribute.Date;
-    imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    data: Schema.Attribute.Date & Schema.Attribute.Required;
+    imagem: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizacao: Schema.Attribute.String;
+    localizacao: Schema.Attribute.String & Schema.Attribute.Required;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::evento.evento'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subtitulo: Schema.Attribute.String;
-    titulo: Schema.Attribute.String;
+    subtitulo: Schema.Attribute.Text & Schema.Attribute.Required;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
